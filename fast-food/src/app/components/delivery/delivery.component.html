@@ -1,0 +1,8 @@
+<p>Pedidos ingresados:</p>
+<p>{{ order | json }}</p>
+<p>Pedidos listos para entregar:</p>
+@for (orderReady of order; track $index) {
+<ul>
+  <li> {{orderReady.nombre}} </li>
+</ul>
+}

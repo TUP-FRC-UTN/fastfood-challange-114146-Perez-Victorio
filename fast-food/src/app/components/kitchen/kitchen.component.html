@@ -1,0 +1,24 @@
+<h3>Componentes de cocina</h3>
+<p>Pendientes a cocinar:</p>
+
+@for (order of ordersKitchen; track $index; let i = $index) {
+<ul>
+  <li>
+    ({{ numero }}) - {{ order.pedido }} -
+    <button (click)="cocinarOrder(order)" [disabled]="valid !== null">
+      Cocinar
+    </button>
+  </li>
+</ul>
+}
+
+<p>Pedidos en cocción:</p>
+
+@for (order of orderCocinando; track $index) {
+<ul>
+  <li>{{ order.nombre }} - {{ order.pedido }}</li>
+</ul>
+<button (click)="changeValid()">Pedido terminado</button>
+}
+
+
